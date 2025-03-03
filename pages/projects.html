@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+
+  <!-- Google Fonts: Fjalla One for titles and Libre Baskerville for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <a href="../index.html"><h1 class="site-title">Benjamin Rouse</h1></a>
+    </div>
+
+    <!-- MAIN NAV BAR -->
+    <nav class="main-nav">
+      <ul>
+        <li class="MainNavLink"><a href="../index.html">Home</a></li>
+        <li class="MainNavLink"><a href="../pages/About.html">About Me</a></li>
+        <li class="MainNavLink"><a href="../pages/projects.html" class="active">Projects</a></li>
+        <li class="MainNavLink"><a href="../pages/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-heading">
+    <h2>Projects</h2>
+  </section>
+
+  <main><br>
+  <input type="text" id="searchInput" placeholder="Filter projects by tool/skill/category (e.g., Excel, SQL, etc)..." />
+  <button id="addFilterButton">Add Filter</button>
+
+  <!-- Container for displaying active filters -->
+  <div id="activeFiltersContainer"></div>
+
+    <br>
+    <!-- Featured Projects Section -->
+    <section id="featuredSection">
+        <h2>Featured Projects</h2>
+        <div id="featuredProjects" class="projects-grid"></div>
+      </section>
+      <br><br><br>
+      <section id="otherSection">
+        <h2>Other Projects</h2>
+        <div id="otherProjects" class="projects-grid"></div>
+      </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+  </footer>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
