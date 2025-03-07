@@ -2,7 +2,7 @@
     {
         "title": "Assignment Hub: Automating Academic Workload Management",
         "description": "Automated web scraping script.",
-        "category": "Data Engineering",
+        "category": "",
         "tools": ["Azure SQL Server", "Power BI", "PowerBI", "OpenAI", "OpenAI API", "API", "Prompt Engineering", "Python"],
         "link": "../projects/AssignmentHub.html",
         "featured": true,
@@ -10,20 +10,20 @@
     },
     {
         "title": "Excel + Apple Shortcuts: A Productivity Hack",
-        "description": "Automated web scraping script.",
-        "category": "Data Engineering",
+        "description": "A personal project to keeping on top of tasks using Excel and Apple Shortcuts.",
+        "category": "",
         "tools": ["Excel", "PowerQuery", "Power Query", "Apple Shortcuts", "CSV"],
         "link": "../projects/ExcelShortcut.html",
         "featured": false,
-        "comingSoon": false
+        "comingSoon": true
     },
     {
         "title": "Power BI Dashboard Portfolio",
         "description": "This is a collection of Power BI dashboards I have created for various projects and/or work assignments.",
-        "category": "Data Engineering",
+        "category": "",
         "tools": ["Power BI", "PowerBI"],
         "link": "../projects/PowerBICollection.html",
         "featured": false,
-        "comingSoon": false
+        "comingSoon": true
     }
   ]
