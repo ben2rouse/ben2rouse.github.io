@@ -207,6 +207,7 @@ footer {
     margin-top: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Shadow around the carousel */
+    padding: 17px;
 }
 
 /* Inner shadow to give a depth effect on scrolling */
