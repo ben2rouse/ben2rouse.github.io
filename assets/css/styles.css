@@ -189,33 +189,75 @@ footer {
 
 /* HIGHLIGHT CAROUSEL */
 .highlight-carousel {
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
     margin: 40px 0;
+    padding: 20px 0;
 }
 
+.highlight-instructions {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* SCROLL INDICATORS (GRADIENT EFFECT) */
+.highlight-scroll-indicator {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 100%;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.highlight-scroll-indicator.left {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.highlight-scroll-indicator.right {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* TRACK SCROLL */
 .highlight-track {
     display: flex;
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 10px 0;
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    scrollbar-width: thin; /* Thin scrollbar in Firefox */
     -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
 }
 
 .highlight-track::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Chrome/Safari */
+    height: 6px;
 }
 
+.highlight-track::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* INDIVIDUAL SLIDES */
 .highlight-slide {
     flex: 0 0 auto;
-    width: 250px; /* Increase size */
-    height: 250px;
+    width: 300px; /* Larger image */
+    height: 300px;
     position: relative;
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.highlight-slide:hover {
+    transform: scale(1.05);
 }
 
 .highlight-slide img {
@@ -234,7 +276,7 @@ footer {
 
 .highlight-title {
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
