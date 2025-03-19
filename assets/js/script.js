@@ -13,31 +13,40 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(response => response.json())
       .then(projects => {
           allProjects = projects;
-          displayProjects(projects);
+          if (featuredContainer && otherContainer) {
+              displayProjects(projects);
+          } else {
+              console.error("Error: Project containers not found in the DOM.");
+          }
       })
       .catch(error => console.error('Error loading projects:', error));
 
   // Add filter when button is clicked
-  addFilterButton.addEventListener('click', function () {
-      const filterValue = searchInput.value.trim().toLowerCase();
-      if (filterValue && !activeFilters.includes(filterValue)) {
-          activeFilters.push(filterValue);
-          updateActiveFiltersDisplay();
-      }
-      searchInput.value = '';
-      filterAndDisplayProjects();
-  });
+  if (addFilterButton && searchInput) {
+      addFilterButton.addEventListener('click', function () {
+          const filterValue = searchInput.value.trim().toLowerCase();
+          if (filterValue && !activeFilters.includes(filterValue)) {
+              activeFilters.push(filterValue);
+              updateActiveFiltersDisplay();
+          }
+          searchInput.value = '';
+          filterAndDisplayProjects();
+      });
 
-  // Allow Enter key to add filter
-  searchInput.addEventListener('keypress', function (e) {
-      if (e.key === 'Enter') {
-          e.preventDefault();
-          addFilterButton.click();
-      }
-  });
+      // Allow Enter key to add filter
+      searchInput.addEventListener('keypress', function (e) {
+          if (e.key === 'Enter') {
+              e.preventDefault();
+              addFilterButton.click();
+          }
+      });
+  } else {
+      console.error("Error: Search input or add filter button not found.");
+  }
 
-  // Update the active filters display
+  // Function to update active filters display
   function updateActiveFiltersDisplay() {
+      if (!activeFiltersContainer) return;
       activeFiltersContainer.innerHTML = '';
       activeFilters.forEach((filter, index) => {
           const filterTag = document.createElement('span');
@@ -57,8 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  // Filter projects based on active filters
+  // Function to filter projects
   function filterAndDisplayProjects() {
+      if (!featuredContainer || !otherContainer) return;
       let filteredProjects = allProjects;
       if (activeFilters.length > 0) {
           filteredProjects = allProjects.filter(project => {
@@ -71,8 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
       displayProjects(filteredProjects);
   }
 
-  // Display projects in the featured and other sections
+  // Function to display projects
   function displayProjects(projects) {
+      if (!featuredContainer || !otherContainer) return;
       featuredContainer.innerHTML = '';
       otherContainer.innerHTML = '';
 
@@ -144,12 +155,15 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // --------- HIGHLIGHT CAROUSEL FUNCTIONALITY ---------
-  document.querySelector(".highlight-carousel .prev").addEventListener("click", function () {
-      document.querySelector(".highlight-track").scrollLeft -= 300;
-  });
-
-  document.querySelector(".highlight-carousel .next").addEventListener("click", function () {
-      document.querySelector(".highlight-track").scrollLeft += 300;
-  });
-
+  const highlightTrack = document.querySelector(".highlight-track");
+  if (highlightTrack) {
+      highlightTrack.addEventListener("scroll", function () {
+          document.querySelector(".highlight-scroll-indicator.left").style.opacity =
+              highlightTrack.scrollLeft > 10 ? "1" : "0";
+          document.querySelector(".highlight-scroll-indicator.right").style.opacity =
+              highlightTrack.scrollLeft + highlightTrack.clientWidth < highlightTrack.scrollWidth ? "1" : "0";
+      });
+  } else {
+      console.error("Error: Highlight track not found.");
+  }
 });
