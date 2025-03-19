@@ -18,12 +18,12 @@
         "comingSoon": true
     },
     {
-        "title": "Power BI Dashboard Portfolio",
-        "description": "This is a collection of Power BI dashboards I have created for various projects and/or work assignments.",
+        "title": "Reporting Portfolio",
+        "description": "This is a collection of Power BI and Excel Reports I have created for various projects and/or work assignments to utilize data for decision making.",
         "category": "",
         "tools": ["Power BI", "PowerBI"],
         "link": "../projects/PowerBICollection.html",
-        "featured": false,
-        "comingSoon": true
+        "featured": true,
+        "comingSoon": false
     }
   ]
