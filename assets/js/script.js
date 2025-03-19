@@ -127,17 +127,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // --------- FIXED CAROUSEL SCROLL FUNCTIONALITY ---------
   
   function scrollLeft(carouselId) {
-      const carousel = document.getElementById(carouselId);
-      if (carousel) {
-          carousel.scrollBy({ left: -400, behavior: 'smooth' });
-      }
+    console.log('scrolling left: ', carouselId);
+    const carousel = document.getElementById(carouselId);
+    if (carousel) {
+        carousel.scrollBy({ left: -400, behavior: 'smooth' });
+    }
   }
 
   function scrollRight(carouselId) {
-      const carousel = document.getElementById(carouselId);
-      if (carousel) {
-          carousel.scrollBy({ left: 400, behavior: 'smooth' });
-      }
+    console.log('scrolling right: ', carouselId);
+    const carousel = document.getElementById(carouselId);
+    if (carousel) {
+        carousel.scrollBy({ left: 400, behavior: 'smooth' });
+    }
   }
 
   // Attach event listeners to all carousel buttons

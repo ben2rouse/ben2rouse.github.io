@@ -213,7 +213,7 @@ footer {
 /* Inner shadow to give a depth effect on scrolling */
 .image-track {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-behavior: smooth;
     width: 100%;
     scrollbar-width: none; /* Hide scrollbar in Firefox */
