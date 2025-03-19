@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterValue = searchInput.value.trim().toLowerCase();
     if (filterValue && !activeFilters.includes(filterValue)) {
       activeFilters.push(filterValue);
-      console.log("Added filter:", filterValue);
       updateActiveFiltersDisplay();
     }
     searchInput.value = '';
@@ -60,21 +59,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Filter projects based on active filters
   function filterAndDisplayProjects() {
-    console.log("Active filters:", activeFilters);
     let filteredProjects = allProjects;
     if (activeFilters.length > 0) {
       filteredProjects = allProjects.filter(project => {
         const projectTools = project.tools.map(tool => tool.toLowerCase());
         return activeFilters.every(filter => {
-          const match = projectTools.some(tool => tool.includes(filter));
-          if (!match) {
-            console.log(`Project "${project.title}" does not match filter "${filter}"`);
-          }
-          return match;
+          return projectTools.some(tool => tool.includes(filter));
         });
       });
     }
-    console.log("Filtered projects:", filteredProjects);
     displayProjects(filteredProjects);
   }
 
@@ -131,28 +124,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // --------- CAROUSEL FUNCTIONALITY ---------
-
-  function scrollLeft(id) {
-      document.getElementById(id).scrollBy({ left: -400, behavior: 'smooth' });
+  // --------- FIXED CAROUSEL SCROLL FUNCTIONALITY ---------
+  
+  function scrollLeft(carouselId) {
+      const carousel = document.getElementById(carouselId);
+      if (carousel) {
+          carousel.scrollBy({ left: -400, behavior: 'smooth' });
+      }
   }
 
-  function scrollRight(id) {
-      document.getElementById(id).scrollBy({ left: 400, behavior: 'smooth' });
+  function scrollRight(carouselId) {
+      const carousel = document.getElementById(carouselId);
+      if (carousel) {
+          carousel.scrollBy({ left: 400, behavior: 'smooth' });
+      }
   }
 
-  // Add event listeners to carousel buttons
+  // Attach event listeners to all carousel buttons
   document.querySelectorAll('.prev').forEach(button => {
       button.addEventListener('click', function() {
-          const carouselId = this.nextElementSibling.id; // Get the ID of the image track
-          scrollLeft(carouselId);
+          const carousel = this.parentElement.querySelector('.image-track');
+          if (carousel) {
+              scrollLeft(carousel.id);
+          }
       });
   });
 
   document.querySelectorAll('.next').forEach(button => {
       button.addEventListener('click', function() {
-          const carouselId = this.previousElementSibling.id; // Get the ID of the image track
-          scrollRight(carouselId);
+          const carousel = this.parentElement.querySelector('.image-track');
+          if (carousel) {
+              scrollRight(carousel.id);
+          }
       });
   });
 
