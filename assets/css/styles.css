@@ -188,6 +188,15 @@ footer {
 }
 
 /* CAROUSEL STYLES */
+
+.project {
+    border:1px solid black;
+    border-radius: 10px;
+    background-color: gray;
+    color:black;
+    padding: 10px;
+    margin-bottom: 20px;
+}
 .carousel-container {
     display: flex;
     align-items: center;
@@ -213,14 +222,13 @@ footer {
 .image-slide {
     flex: 0 0 auto;
     width: 100%;
-    max-width: 400px;
+    max-width: 800px;
     margin-right: 10px;
     text-align: center;
 }
 
 .image-slide img {
     width: 100%;
-    max-width: 600px;  /* Increase size */
     height: auto; /* Maintains aspect ratio */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
