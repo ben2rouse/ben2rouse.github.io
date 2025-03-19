@@ -22,11 +22,22 @@ header {
     padding: 10px 0;
 }
 
+/* MAIN SECTION - Adjust margins based on screen width */
 main {
-    margin: auto 40px;
+    margin: auto;
     padding: 20px;
     background-color: white;
     border-radius: 5px;
+    max-width: 1200px;
+}
+
+/* Remove margin when browser is too narrow */
+@media (max-width: 768px) {
+    main {
+        margin: 0;
+        padding: 15px;
+        border-radius: 0;
+    }
 }
 
 footer {
@@ -48,7 +59,7 @@ footer {
     width: 70px;
     height: 30px;
     background-color: white;
-    border:1px solid black;
+    border: 1px solid black;
     border-radius: 5px;
     margin-left: 7px;
 }
@@ -113,12 +124,9 @@ footer {
     margin-left: 5px;
 }
 
-
 /* -------------------------------------------------- */
-/* NEW LAYOUT CLASSES FOR TOP BAR, NAV (NO DROPDOWNS), 
-   AND PAGE HEADING */
+/* NAVIGATION STYLING */
 /* -------------------------------------------------- */
-
 
 .top-bar {
     text-align: center;
@@ -136,11 +144,8 @@ footer {
     background: rgb(227, 227, 227);
     border-top: 1px solid rgb(0, 0, 0);
     border-bottom: 1px solid rgb(0, 0, 0);
-    margin-left: -20px;
-    margin-right: -20px;
 }
 
-/* Overriding the old nav styling with more specific .main-nav selectors */
 .main-nav ul {
   list-style: none;
   display: flex;
@@ -170,23 +175,6 @@ footer {
     color: #fff;
 }
 
-.site-title {
-    font-family: "Dancing Script", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* PAGE HEADING SECTION (below nav) */
-.page-heading {
-    background: #fff;
-    padding: 10px;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    font-size: 20px;
-    text-align: center;
-    margin: 30px 40px 0px 40px;
-}
-
 /* HIGHLIGHT CAROUSEL */
 .highlight-carousel {
     position: relative;
@@ -202,26 +190,6 @@ footer {
     font-size: 14px;
     color: #555;
     margin-bottom: 10px;
-}
-
-/* SCROLL INDICATORS (GRADIENT EFFECT) */
-.highlight-scroll-indicator {
-    position: absolute;
-    top: 50%;
-    width: 50px;
-    height: 100%;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.highlight-scroll-indicator.left {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-}
-
-.highlight-scroll-indicator.right {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
 
 /* TRACK SCROLL */
@@ -247,7 +215,7 @@ footer {
 /* INDIVIDUAL SLIDES */
 .highlight-slide {
     flex: 0 0 auto;
-    width: 300px; /* Larger image */
+    width: 300px;
     height: 300px;
     position: relative;
     cursor: pointer;
@@ -289,15 +257,14 @@ footer {
 }
 
 .highlight-slide:hover img {
-    opacity: 0.5; /* Darken image */
+    opacity: 0.5;
 }
 
 .highlight-slide:hover .highlight-title {
-    opacity: 1; /* Show title */
+    opacity: 1;
 }
 
-/* CAROUSEL STYLES */
-
+/* PROJECT CAROUSEL STYLES */
 .project {
     border: 1px solid black;
     border-radius: 10px;
@@ -305,7 +272,7 @@ footer {
     color: black;
     padding: 25px;
     margin-bottom: 40px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow around project */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-container {
@@ -315,26 +282,22 @@ footer {
     overflow: hidden;
     margin-top: 20px;
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Shadow around the carousel */
-
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Inner shadow to give a depth effect on scrolling */
 .image-track {
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
     width: 100%;
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     position: relative;
-    box-shadow: inset 10px 0px 15px rgba(0, 0, 0, 0.15), 
-                inset -10px 0px 15px rgba(0, 0, 0, 0.15); /* Shadows on edges */
-    padding-left:40px;
+    padding-left: 40px;
 }
 
 .image-track::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Chrome/Safari */
+    display: none;
 }
 
 .image-slide {
@@ -343,16 +306,16 @@ footer {
     max-width: 800px;
     margin-right: 10px;
     text-align: center;
-    padding: 20px
+    padding: 20px;
 }
 
 .image-slide img {
-    height: 400px; /* Set a fixed height */
-    width: auto; /* Adjust width automatically to maintain aspect ratio */
-    max-width: 100%; /* Prevent overflow */
-    object-fit: contain; /* Ensures the entire image is visible without cropping */
+    height: 400px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Shadow around each image */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .image-slide p {
@@ -360,7 +323,7 @@ footer {
     font-size: 14px;
 }
 
-/* SCROLL BUTTON STYLING */
+/* BUTTON STYLING */
 .prev, .next {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
@@ -372,15 +335,8 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Button shadow */
-    transition: background 0.3s, transform 0.2s ease-in-out;
-    z-index: 10; /* Ensures the button stays on top */
+    z-index: 10;
 }
 
 .prev { left: 5px; }
 .next { right: 5px; }
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    transform: translateY(-50%) scale(1.1); /* Slight hover animation */
-}
