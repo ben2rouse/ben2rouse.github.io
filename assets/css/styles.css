@@ -195,7 +195,7 @@ footer {
     background-color: rgb(246, 246, 246);
     color: black;
     padding: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow around project */
 }
 
@@ -221,6 +221,7 @@ footer {
     position: relative;
     box-shadow: inset 10px 0px 15px rgba(0, 0, 0, 0.15), 
                 inset -10px 0px 15px rgba(0, 0, 0, 0.15); /* Shadows on edges */
+    padding-left:40px;
 }
 
 .image-track::-webkit-scrollbar {
@@ -237,8 +238,10 @@ footer {
 }
 
 .image-slide img {
-    width: 100%;
-    height: auto; /* Maintains aspect ratio */
+    height: 400px; /* Set a fixed height */
+    width: auto; /* Adjust width automatically to maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow */
+    object-fit: contain; /* Ensures the entire image is visible without cropping */
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Shadow around each image */
 }
