@@ -186,3 +186,65 @@ footer {
     text-align: center;
     margin: 30px 40px 0px 40px;
 }
+
+/* CAROUSEL STYLES */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.image-track {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+}
+
+.image-track::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari */
+}
+
+.image-slide {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 400px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.image-slide img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.image-slide p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}
+
+.prev { left: 5px; }
+.next { right: 5px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

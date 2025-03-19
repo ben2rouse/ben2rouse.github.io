@@ -5,51 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Portfolio</title>
 
-  <!-- Google Fonts: Fjalla One for titles and Libre Baskerville for body text -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;0,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 <body>
   <header>
-    <!-- TOP BAR -->
     <div class="top-bar">
       <a href="../index.html"><h1 class="site-title">Benjamin Rouse</h1></a>
     </div>
 
-    <!-- MAIN NAV BAR -->
     <nav class="main-nav">
       <ul>
         <li class="MainNavLink"><a href="../index.html">Home</a></li>
-        <li class="MainNavLink"><a href="../pages/about.html" class="active">About Me</a></li>
-        <li class="MainNavLink"><a href="../pages/projects.html">Projects</a></li>
+        <li class="MainNavLink"><a href="../pages/about.html">About Me</a></li>
+        <li class="MainNavLink"><a href="../pages/projects.html" class="active">Projects</a></li>
         <li class="MainNavLink"><a href="../pages/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="page-heading">
-    <h2>About Me</h2>
-  </section>
-
   <main>
-    <table style="margin: auto;">
-      <tr>
-        <td><img src="../assets/images/Headshot.png" width="400px"></td>
-        <td style="padding: 25px; max-width: 600px;"><p style="text-indent: 30px;">Hi, I’m Benjamin Rouse—a data analyst with a passion for turning raw data into meaningful insights. With a BBA in Computer Information Systems and hands-on experience in Power BI, SQL, Python, and Excel, I specialize in data visualization, reporting automation, and business intelligence.</p>
+    <h1>Power BI Dashboard Portfolio</h1><br>
+    
+    <p>Description of the project goes here. Explain the tools used, your role, and key features of the project.</p>
+    <p><strong>Tools:</strong> Power BI</p>
+    <a href="https://github.com/yourusername/yourproject" target="_blank">View Code</a>
 
-          <p style="text-indent: 30px;">Currently, I work as a Student Assessment Specialist at Southern Adventist University, where I develop Power BI reports that help analyze student success, graduate placement, departmental performance and much more.</p>
-          
-          <p style="text-indent: 30px;">Beyond my professional work, I have experience as a freelance web developer, building dynamic websites and managing databases with PHP, JavaScript, and SQL. I thrive on solving complex problems and leveraging data to drive smarter decisions.</p>
-          
-          <p style="text-indent: 30px;">When I’m not working with data, I enjoy working on personal projects, spending time outdoors, and taking on new challenges that push my analytical and technical capabilities.</p></td>
-      </tr>
-    </table>
+    <!-- PROJECT 1 - Dashboard Example -->
+    <div class="project">
+        <h2>Student Performance Dashboard</h2>
+        <p>This dashboard provides insights into student performance trends, graduation rates, and departmental benchmarks.</p>
+
+        <div class="carousel-container">
+            <button class="prev" onclick="scrollLeft('project1')">&#10094;</button>
+            <div class="image-track" id="project1">
+                <div class="image-slide">
+                    <img src="../assets/images/dashboard1-1.jpg" alt="Overall Performance Metrics">
+                    <p>Overall performance metrics visualized using Power BI.</p>
+                </div>
+                <div class="image-slide">
+                    <img src="../assets/images/dashboard1-2.jpg" alt="Graduate Placement Trends">
+                    <p>Graduate placement trends categorized by department.</p>
+                </div>
+                <div class="image-slide">
+                    <img src="../assets/images/dashboard1-3.jpg" alt="Retention Analysis">
+                    <p>Retention analysis comparing year-over-year student retention rates.</p>
+                </div>
+            </div>
+            <button class="next" onclick="scrollRight('project1')">&#10095;</button>
+        </div>
+    </div>
+
   </main>
+
   <footer>
     <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
   </footer>
+
+  <script src="../assets/js/script.js"></script>
 </body>
 </html>
