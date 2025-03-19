@@ -21,7 +21,7 @@
         "title": "Reporting Portfolio",
         "description": "This is a collection of Power BI and Excel Reports I have created for various projects and/or work assignments to utilize data for decision making.",
         "category": "",
-        "tools": ["Power BI", "PowerBI"],
+        "tools": ["Power BI", "PowerBI", "Excel", "SQL", "Power Query", "PowerQuery", "DAX", "Data Analysis Expressions", "Data Analysis", "Data Analysis Expressions (DAX)"],
         "link": "../projects/PowerBICollection.html",
         "featured": true,
         "comingSoon": false
