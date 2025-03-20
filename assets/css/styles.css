@@ -44,6 +44,11 @@ main {
 
 #small_screen {
     display: none;
+    width:100%;
+}
+
+#small_screen img {
+    margin: auto;
 }
 
 /* Remove margin when browser is too narrow */
