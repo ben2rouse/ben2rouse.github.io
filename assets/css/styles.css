@@ -38,12 +38,28 @@ main {
     max-width: 1200px;
 }
 
+#large_screen {
+    display: block;
+}
+
+#small_screen {
+    display: none;
+}
+
 /* Remove margin when browser is too narrow */
 @media (max-width: 768px) {
     main {
         margin: 0;
         padding: 15px;
         border-radius: 0;
+    }
+
+    #large_screen {
+        display: none;
+    }
+
+    #small_screen {
+        display: block;
     }
 }   
 
