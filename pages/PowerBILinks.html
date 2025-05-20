@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>Power BI Projects | Benjamin Rouse - Data Analyst</title>
+  <meta name="description" content="Explore Benjamin Rouse's Power BI projects, showcasing data visualization and business intelligence expertise.">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- CSS Files -->
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/page-styles.css" />
 </head>
 <body>
   <header>
@@ -22,25 +30,98 @@
       <ul>
         <li class="MainNavLink"><a href="../index.html">Home</a></li>
         <li class="MainNavLink"><a href="../pages/about.html">About Me</a></li>
-        <li class="MainNavLink"><a href="../pages/projects.html">Projects</a></li>
-        <li class="MainNavLink"><a href="../pages/contact.html" class="active">Contact</a></li>
+        <li class="MainNavLink"><a href="../pages/projects.html" class="active">Projects</a></li>
+        <li class="MainNavLink"><a href="../pages/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="page-heading">
-    <h2>Contact Information</h2>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h2>Power BI Projects</h2>
+    <p>A collection of my data visualization work in Power BI</p>
   </section>
 
-  <main>
-    <p>Below are a few ways to get a hold of me:</p>
-    <ul style="margin-left:30px; list-style-type: square;">
-      <li>Email: <a href="mailto:benjaminrouse@southern.edu">benjaminrouse@southern.edu</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/benjamin-rouse-7105a924a" target="_blank" rel="noopener noreferrer">Benjamin Rouse</a></li>
-    </ul>
-  </main>
+  <!-- MAIN CONTENT -->
+  <section class="content-section">
+    <h3>Data Visualization with Power BI</h3>
+    <p>Below are examples of interactive dashboards and reports I've created using Power BI. Each project demonstrates different visualization techniques and data analysis approaches.</p>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="../assets/images/PBI Portfolio/Delaware Cost Study/Page2Tooltip.png" alt="Delaware Cost Study">
+        </div>
+        <div class="project-details">
+          <h4>Delaware Cost Study Dashboard</h4>
+          <p>Interactive visualization of institutional cost data with custom tooltips and insights.</p>
+          <div class="project-tags">
+            <span class="project-tag">Power BI</span>
+            <span class="project-tag">Education Analytics</span>
+            <span class="project-tag">Custom Visuals</span>
+          </div>
+          <a href="../assets/images/PBI Portfolio/Delaware Cost Study/Delaware Cost Study.pdf" class="project-link" target="_blank">View PDF</a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">
+          <img src="../assets/images/PBI Portfolio/Assignment Hub/Screenshot 2025-03-17 121437.png" alt="Assignment Hub">
+        </div>
+        <div class="project-details">
+          <h4>Assignment Hub</h4>
+          <p>A comprehensive Power BI solution for tracking and analyzing assignment data.</p>
+          <div class="project-tags">
+            <span class="project-tag">Power BI</span>
+            <span class="project-tag">Data Analytics</span>
+            <span class="project-tag">Education</span>
+          </div>
+          <a href="../assets/images/PBI Portfolio/Assignment Hub/AssignmentHubReport.pdf" class="project-link" target="_blank">View PDF</a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">
+          <img src="../assets/images/PBI Portfolio/Alumni Survey/Screenshot 2025-03-17 122704.png" alt="Alumni Survey">
+        </div>
+        <div class="project-details">
+          <h4>Alumni Survey Analysis</h4>
+          <p>Analysis of alumni feedback and outcomes using interactive visualizations.</p>
+          <div class="project-tags">
+            <span class="project-tag">Power BI</span>
+            <span class="project-tag">Survey Analysis</span>
+            <span class="project-tag">Higher Ed</span>
+          </div>
+          <a href="../assets/images/PBI Portfolio/Alumni Survey/Alumni Survey.pdf" class="project-link" target="_blank">View PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.page-header, .content-section');
+      
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 200 * index);
+      });
+    });
+  </script>
 </body>
 </html>

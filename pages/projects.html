@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>Projects | Benjamin Rouse - Data Analyst</title>
+  <meta name="description" content="Explore Benjamin Rouse's portfolio of data analysis and visualization projects, showcasing expertise in Power BI, SQL, and Excel.">
 
-  <!-- Google Fonts: Fjalla One for titles and Libre Baskerville for body text -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-  <!-- Main CSS -->
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- CSS Files -->
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/page-styles.css" />
 </head>
 <body>
   <header>
     <!-- TOP BAR -->
     <div class="top-bar">
-        <a href="../index.html"><h1 class="site-title">Benjamin Rouse</h1></a>
+      <a href="../index.html"><h1 class="site-title">Benjamin Rouse</h1></a>
     </div>
 
     <!-- MAIN NAV BAR -->
@@ -30,32 +36,63 @@
     </nav>
   </header>
 
-  <section class="page-heading">
-    <h2>Projects</h2>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h2>My Projects</h2>
+    <p>A collection of my data analysis and visualization work</p>
   </section>
 
-  <main><br>
-  <input type="text" id="searchInput" placeholder="Filter projects by tool/skill/category (e.g., Excel, SQL, etc)..." />
-  <button id="addFilterButton">Add Filter</button>
+  <!-- PROJECTS CONTENT -->
+  <section class="content-section">
+    <div class="projects-filter">
+      <div class="filter-input">
+        <input type="text" id="searchInput" placeholder="Filter projects by tool/skill/category (e.g., Excel, SQL, etc)..." />
+        <button id="addFilterButton">Add Filter</button>
+      </div>
+      <!-- Container for displaying active filters -->
+      <div id="activeFiltersContainer"></div>
+    </div>
 
-  <!-- Container for displaying active filters -->
-  <div id="activeFiltersContainer"></div>
-
-    <br>
     <!-- Featured Projects Section -->
-    <section id="featuredSection">
-        <h2>Featured Projects</h2>
-        <div id="featuredProjects" class="projects-grid"></div>
-      </section>
-      <br><br><br>
-      <section id="otherSection">
-        <h2>Other Projects</h2>
-        <div id="otherProjects" class="projects-grid"></div>
-      </section>
-  </main>
+    <div class="project-category">
+      <h3>Featured Projects</h3>
+      <div id="featuredProjects" class="projects-grid"></div>
+    </div>
+
+    <!-- Other Projects Section -->
+    <div class="project-category">
+      <h3>Other Projects</h3>
+      <div id="otherProjects" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    </div>
   </footer>
-  <script src="../assets/js/script.js"></script>
+
+  <!-- Project Loading Script -->
+  <script src="../assets/js/script-updated.js"></script>
+  
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.page-header, .content-section');
+      
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 200 * index);
+      });
+    });
+  </script>
 </body>
 </html>

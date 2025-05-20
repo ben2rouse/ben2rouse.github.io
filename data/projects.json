@@ -1,29 +1,52 @@
 [
     {
         "title": "Assignment Hub: Automating Academic Workload Management",
-        "description": "Automated web scraping script.",
-        "category": "",
+        "description": "A comprehensive solution for academic task management and workload visualization leveraging AI and data analytics.",
+        "category": "Data Analytics",
         "tools": ["Azure SQL Server", "Power BI", "PowerBI", "OpenAI", "OpenAI API", "API", "Prompt Engineering", "Python"],
         "link": "../projects/AssignmentHub.html",
         "featured": true,
-        "comingSoon": false
+        "comingSoon": false,
+        "imageUrl": "PBI Portfolio/Assignment Hub/Screenshot 2025-03-17 121437.png"
     },
     {
         "title": "Excel + Apple Shortcuts: A Productivity Hack",
-        "description": "A personal project to keeping on top of tasks using Excel and Apple Shortcuts.",
-        "category": "",
+        "description": "A personal project combining Excel and Apple Shortcuts to automate data workflows and enhance productivity.",
+        "category": "Automation",
         "tools": ["Excel", "PowerQuery", "Power Query", "Apple Shortcuts", "CSV"],
         "link": "../projects/ExcelShortcut.html",
         "featured": false,
-        "comingSoon": true
+        "comingSoon": false,
+        "imageUrl": "PBI Portfolio/QEP Excel/Main_FirstResults.png"
     },
     {
-        "title": "Reporting Portfolio",
-        "description": "This is a collection of Power BI and Excel Reports I have created for various projects and/or work assignments to utilize data for decision making.",
-        "category": "",
-        "tools": ["Power BI", "PowerBI", "Excel", "SQL", "Power Query", "PowerQuery", "DAX", "Data Analysis Expressions", "Data Analysis", "Data Analysis Expressions (DAX)"],
+        "title": "Power BI Dashboard Collection",
+        "description": "A collection of interactive Power BI dashboards and reports created for various projects and work assignments.",
+        "category": "Data Visualization",
+        "tools": ["Power BI", "PowerBI", "Excel", "SQL", "Power Query", "PowerQuery", "DAX", "Data Analysis Expressions"],
         "link": "../projects/PowerBICollection.html",
         "featured": true,
-        "comingSoon": false
+        "comingSoon": false,
+        "imageUrl": "PBI Portfolio/Delaware Cost Study/Page2Tooltip.png"
+    },
+    {
+        "title": "Delaware Cost Study Dashboard",
+        "description": "Interactive visualization of institutional cost data with custom tooltips and departmental performance metrics.",
+        "category": "Higher Education",
+        "tools": ["Power BI", "PowerBI", "Excel", "Financial Analysis", "Higher Education"],
+        "link": "../pages/PowerBILinks.html",
+        "featured": true,
+        "comingSoon": false,
+        "imageUrl": "PBI Portfolio/Delaware Cost Study/Page2Tooltip.png"
+    },
+    {
+        "title": "Alumni Survey Analysis",
+        "description": "Comprehensive analysis of alumni survey data showcasing career outcomes and educational satisfaction metrics.",
+        "category": "Higher Education",
+        "tools": ["Power BI", "PowerBI", "Survey Analysis", "Higher Education"],
+        "link": "../pages/PowerBILinks.html",
+        "featured": false,
+        "comingSoon": false,
+        "imageUrl": "PBI Portfolio/Alumni Survey/Screenshot 2025-03-17 122704.png"
     }
-  ]
+]

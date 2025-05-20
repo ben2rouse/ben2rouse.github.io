@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>Excel + Apple Shortcuts | Benjamin Rouse - Data Analyst</title>
+  <meta name="description" content="Combining Excel with Apple Shortcuts for enhanced data productivity and workflow automation.">
 
-  <!-- Google Fonts: Fjalla One for titles and Libre Baskerville for body text -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- CSS Files -->
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/page-styles.css" />
 </head>
 <body>
   <header>
@@ -29,15 +36,70 @@
     </nav>
   </header>
 
-  <main>
-    <h1>Excel + Apple Shortcuts: A Productivity Hack</h1><br>
-    
-    <p>Description of the project goes here. Explain the tools used, your role, and key features of the project.</p>
-    <p><strong>Tools:</strong> Python, SQL, etc.</p>
-    <a href="https://github.com/yourusername/yourproject" target="_blank">View Code</a>
-  </main>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h2>Excel + Apple Shortcuts</h2>
+    <p>A Productivity Hack for Streamlined Data Workflows</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="content-section">
+    <div class="project-overview">
+      <div class="project-image-showcase">
+        <img src="../assets/images/PBI Portfolio/QEP Excel/Main_FirstResults.png" alt="Excel Automation Example">
+      </div>
+      
+      <div class="project-details-content">
+        <h3>Project Overview</h3>
+        <p>This project demonstrates how to leverage Apple Shortcuts in combination with Excel to automate repetitive data tasks and enhance productivity. By creating custom shortcuts that interact with Excel data, I was able to streamline several workflows that previously required manual intervention.</p>
+
+        <p>The solution combines Excel's powerful data manipulation capabilities with the automation features of Apple Shortcuts to create a seamless workflow that saves significant time and reduces the potential for human error.</p>
+        
+        <p>Key features of this integration include:</p>
+        <ul>
+          <li>Automated data extraction from Excel to other applications</li>
+          <li>Scheduled report generation and distribution</li>
+          <li>Custom data transformation workflows triggered by mobile shortcuts</li>
+          <li>Voice-activated data retrieval from Excel spreadsheets</li>
+        </ul>
+
+        <div class="technologies-used">
+          <h4>Technologies Used</h4>
+          <div class="tech-tags">
+            <span class="skill-tag"><i class="fas fa-table"></i> Microsoft Excel</span>
+            <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Apple Shortcuts</span>
+            <span class="skill-tag"><i class="fas fa-cogs"></i> Workflow Automation</span>
+            <span class="skill-tag"><i class="fas fa-file-excel"></i> Excel Formulas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.page-header, .content-section');
+      
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 200 * index);
+      });
+    });
+  </script>
 </body>
 </html>

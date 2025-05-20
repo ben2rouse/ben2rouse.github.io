@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>Assignment Hub Project | Benjamin Rouse - Data Analyst</title>
+  <meta name="description" content="Assignment Hub project: automating academic workload management with Power BI, Azure SQL and OpenAI.">
 
-  <!-- Google Fonts: Fjalla One for titles and Libre Baskerville for body text -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-
-  <!-- Main CSS -->
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- CSS Files -->
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/page-styles.css" />
 </head>
 <body>
   <header>
@@ -31,25 +36,72 @@
     </nav>
   </header>
 
-  <main>
-    <h1>Assignment Hub: Automating Academic Workload Management</h1><br>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h2>Assignment Hub</h2>
+    <p>Automating Academic Workload Management with AI and Data Visualization</p>
+  </section>
 
-    <p>The last semester of my college experience, I had the privilege of working alongside Jeffrey Filiberto to design and implement Assignment Hub—a centralized solution for academic task management and workload visualization at Southern Adventist University.<br>
-
-      <br>Our project addressed a double-sided challenge: students struggling to manually manage assignments and campus planners lacking access to student workload data for effective event scheduling. By utilizing OpenAI's API and various custom Python scripts, we automated the process of extracting assignment data from syllabi, created a student task management tool, and developed a Power BI dashboard to visualize academic workload.<br>
+  <!-- MAIN CONTENT -->
+  <section class="content-section">
+    <div class="project-overview">
+      <div class="project-image-showcase">
+        <img src="../assets/images/PBI Portfolio/Assignment Hub/Screenshot 2025-03-17 121437.png" alt="Assignment Hub Dashboard">
+      </div>
       
-      <br>It has been an honor to have been a part of this project, and I am excited that our work can help advance the topic of AI in solving real-world challenges.<br>
-      
-      <br>Many thanks to Jeffrey and his hard work in making this project possible!</p>
+      <div class="project-details-content">
+        <h3>Project Overview</h3>
+        <p>The last semester of my college experience, I had the privilege of working alongside Jeffrey Filiberto to design and implement Assignment Hub—a centralized solution for academic task management and workload visualization at Southern Adventist University.</p>
 
-    <br><br>
+        <p>Our project addressed a double-sided challenge: students struggling to manually manage assignments and campus planners lacking access to student workload data for effective event scheduling. By utilizing OpenAI's API and various custom Python scripts, we automated the process of extracting assignment data from syllabi, created a student task management tool, and developed a Power BI dashboard to visualize academic workload.</p>
+        
+        <p>It has been an honor to have been a part of this project, and I am excited that our work can help advance the topic of AI in solving real-world challenges.</p>
+        
+        <p>Many thanks to Jeffrey and his hard work in making this project possible!</p>
 
-    <p><a href="../assets/files/AssignmentHub.pdf" target="_blank">View our Assignment Hub article.</a></p><br>
+        <div class="project-actions">
+          <a href="../assets/files/AssignmentHub.pdf" target="_blank" class="btn primary-btn"><i class="fas fa-file-pdf"></i> View Full Article</a>
+          <a href="../assets/images/PBI Portfolio/Assignment Hub/AssignmentHubReport.pdf" target="_blank" class="btn secondary-btn"><i class="fas fa-chart-bar"></i> View Dashboard PDF</a>
+        </div>
 
-    <p><strong>Tools:</strong> <i>Azure SQL Server, Power BI, PowerBI, OpenAI, OpenAI API, API, Prompt Engineering, Python</i></p>
-  </main>
+        <div class="technologies-used">
+          <h4>Technologies Used</h4>
+          <div class="tech-tags">
+            <span class="skill-tag"><i class="fas fa-database"></i> Azure SQL Server</span>
+            <span class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
+            <span class="skill-tag"><i class="fas fa-robot"></i> OpenAI API</span>
+            <span class="skill-tag"><i class="fas fa-keyboard"></i> Prompt Engineering</span>
+            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.page-header, .content-section');
+      
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 200 * index);
+      });
+    });
+  </script>
 </body>
 </html>

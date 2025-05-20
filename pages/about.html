@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>About Me | Benjamin Rouse - Data Analyst</title>
+  <meta name="description" content="Learn more about Benjamin Rouse's background, skills, and expertise in data analysis and visualization.">
 
-  <!-- Google Fonts: Fjalla One for titles and Libre Baskerville for body text -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- CSS Files -->
   <link rel="stylesheet" href="../assets/css/styles.css" />
-
+  <link rel="stylesheet" href="../assets/css/page-styles.css" />
 </head>
 <body>
   <header>
@@ -30,43 +36,68 @@
     </nav>
   </header>
 
-  <section class="page-heading">
+  <!-- PAGE HEADER -->
+  <section class="page-header">
     <h2>About Me</h2>
+    <p>Learn about my background, skills, and passion for data analytics.</p>
   </section>
 
-  <main>
-    <table style="margin: auto;" id="large_screen">
-      <tr>
-        <td style="text-align: center;"><img src="../assets/images/Headshot.png" width="320px" style="margin: 0px auto;"></td>
-        <td style="padding: 25px; max-width: 600px;"><p style="text-indent: 30px;">Hi, I’m Benjamin Rouse—a data analyst with a passion for turning raw data into meaningful insights. With a BBA in Computer Information Systems and hands-on experience in Power BI, SQL, Python, and Excel, I specialize in data visualization, reporting automation, and business intelligence.</p>
+  <!-- MAIN CONTENT -->
+  <section class="content-section">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="../assets/images/Headshot.png" alt="Benjamin Rouse">
+      </div>
+      <div class="about-text">
+        <p>Hi, I'm Benjamin Rouse—a data analyst with a passion for turning raw data into meaningful insights. With a BBA in Computer Information Systems and hands-on experience in Power BI, SQL, Python, and Excel, I specialize in data visualization, reporting automation, and business intelligence.</p>
 
-          <p style="text-indent: 30px;">Currently, I work as a Student Assessment Specialist at Southern Adventist University, where I develop Power BI reports that help analyze student success, graduate placement, departmental performance and much more.</p>
-          
-          <p style="text-indent: 30px;">Beyond my professional work, I have experience as a freelance web developer, building dynamic websites and managing databases with PHP, JavaScript, and SQL. I thrive on solving complex problems and leveraging data to drive smarter decisions.</p>
-          
-          <p style="text-indent: 30px;">When I’m not working with data, I enjoy working on personal projects, spending time outdoors, and taking on new challenges that push my analytical and technical capabilities.</p></td>
-      </tr>
-    </table>
+        <p>Currently, I work as a Student Assessment Specialist at Southern Adventist University, where I develop Power BI reports that help analyze student success, graduate placement, departmental performance and much more.</p>
+        
+        <p>Beyond my professional work, I have experience as a freelance web developer, building dynamic websites and managing databases with PHP, JavaScript, and SQL. I thrive on solving complex problems and leveraging data to drive smarter decisions.</p>
+        
+        <p>When I'm not working with data, I enjoy working on personal projects, spending time outdoors, and taking on new challenges that push my analytical and technical capabilities.</p>
+        
+        <h3>Technical Skills</h3>
+        <div class="skills-list">
+          <span class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
+          <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
+          <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+          <span class="skill-tag"><i class="fas fa-table"></i> Excel</span>
+          <span class="skill-tag"><i class="fab fa-html5"></i> HTML/CSS</span>
+          <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+          <span class="skill-tag"><i class="fab fa-php"></i> PHP</span>
+          <span class="skill-tag"><i class="fas fa-server"></i> Databases</span>
+          <span class="skill-tag"><i class="fas fa-project-diagram"></i> Data Modeling</span>
+          <span class="skill-tag"><i class="fas fa-cogs"></i> Process Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-    <table style="margin: auto;" id="small_screen" style="margin: auto;">
-      <tr>
-        <td style="text-align: center;"><img src="../assets/images/Headshot.png" width="320px" style="margin: 0px auto;"></td>
-      </tr>
-      <tr>
-        <td style="padding: 25px; max-width: 90%;"><p style="text-indent: 30px;">Hi, I’m Benjamin Rouse—a data analyst with a passion for turning raw data into meaningful insights. With a BBA in Computer Information Systems and hands-on experience in Power BI, SQL, Python, and Excel, I specialize in data visualization, reporting automation, and business intelligence.</p>
-
-          <p style="text-indent: 30px;">Currently, I work as a Student Assessment Specialist at Southern Adventist University, where I develop Power BI reports that help analyze student success, graduate placement, departmental performance and much more.</p>
-          
-          <p style="text-indent: 30px;">Beyond my professional work, I have experience as a freelance web developer, building dynamic websites and managing databases with PHP, JavaScript, and SQL. I thrive on solving complex problems and leveraging data to drive smarter decisions.</p>
-          
-          <p style="text-indent: 30px;">When I’m not working with data, I enjoy working on personal projects, spending time outdoors, and taking on new challenges that push my analytical and technical capabilities.</p></td>
-      </tr>
-    </table>
-
-  </main>
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.page-header, .content-section');
+      
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 200 * index);
+      });
+    });
+  </script>
 </body>
 </html>

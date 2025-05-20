@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>Contact | Benjamin Rouse - Data Analyst</title>
+  <meta name="description" content="Get in touch with Benjamin Rouse for data analysis, visualization, and business intelligence solutions.">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- CSS Files -->
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/page-styles.css" />
 </head>
 <body>
   <header>
@@ -28,19 +36,68 @@
     </nav>
   </header>
 
-  <section class="page-heading">
-    <h2>Contact Information</h2>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h2>Contact Me</h2>
+    <p>Interested in working together? Let's connect!</p>
   </section>
 
-  <main>
-    <p>Below are a few ways to get a hold of me:</p>
-    <ul style="margin-left:30px; list-style-type: square;">
-      <li>Email: <a href="mailto:benjaminrouse@southern.edu">benjaminrouse@southern.edu</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/benjamin-rouse-7105a924a" target="_blank" rel="noopener noreferrer">Benjamin Rouse</a></li>
-    </ul>
-  </main>
+  <!-- MAIN CONTENT -->
+  <section class="content-section">
+    <div class="contact-methods">
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h4>Email</h4>
+        <p>For project inquiries or general questions</p>
+        <a href="mailto:benjaminrouse@southern.edu">benjaminrouse@southern.edu</a>
+      </div>
+      
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <h4>LinkedIn</h4>
+        <p>Connect with me professionally</p>
+        <a href="https://www.linkedin.com/in/benjamin-rouse-7105a924a" target="_blank" rel="noopener noreferrer">Benjamin Rouse</a>
+      </div>
+      
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fab fa-github"></i>
+        </div>
+        <h4>GitHub</h4>
+        <p>Check out my code repositories</p>
+        <a href="https://github.com/ben2rouse" target="_blank" rel="noopener noreferrer">ben2rouse</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.page-header, .content-section');
+      
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 200 * index);
+      });
+    });
+  </script>
 </body>
 </html>
