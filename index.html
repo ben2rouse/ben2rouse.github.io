@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <title>Benjamin Rouse | Data Analyst & Visualization Specialist</title>
+  <meta name="description" content="Professional portfolio of Benjamin Rouse, specializing in data analysis, visualization, and business intelligence solutions.">
 
   <!-- Google Fonts: Fjalla One for titles and Libre Baskerville for body text -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
   
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/portfolio-home.css" />
 </head>
 <body>
   <header>
@@ -31,18 +36,103 @@
     </nav>
   </header>
 
-  <!-- PAGE HEADING -->
-  <section class="page-heading">
-    <h2>Welcome to My Portfolio</h2>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h2>Data Analyst & Visualization Specialist</h2>
+        <p>I transform complex data into clear, actionable insights through powerful visualizations and expert analysis.</p>
+        <div class="hero-buttons">
+          <a href="pages/projects.html" class="btn primary-btn">View My Work</a>
+          <a href="pages/contact.html" class="btn secondary-btn">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/Headshot.png" alt="Benjamin Rouse" />
+      </div>
+    </div>
   </section>
 
-  <main>
-    <p>Welcome to my site! 
-    <br>Explore my <a href="/pages/projects.html">projects</a> and learn more about my experience.</p>
-  </main>
+  <!-- SKILLS SECTION -->
+  <section class="skills">
+    <h2>My Expertise</h2>
+    <div class="skills-container">
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h3>Data Visualization</h3>
+        <p>Creating interactive dashboards and reports with Power BI, Tableau, and Excel.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3>Data Analysis</h3>
+        <p>Transforming raw data into insights through SQL, Python, and advanced analytics.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Business Intelligence</h3>
+        <p>Developing solutions that drive decision-making and organizational improvement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS SECTION -->
+  <section class="featured-projects">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/PBI Portfolio/Assignment Hub/Screenshot 2025-03-17 121437.png" alt="Assignment Hub" />
+        </div>
+        <div class="project-details">
+          <h3>Assignment Hub</h3>
+          <p>A comprehensive Power BI solution for tracking and analyzing assignment data.</p>
+          <a href="projects/AssignmentHub.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/PBI Portfolio/Delaware Cost Study/Page2Tooltip.png" alt="Delaware Cost Study" />
+        </div>
+        <div class="project-details">
+          <h3>Delaware Cost Study Dashboard</h3>
+          <p>Interactive visualization of institutional cost data with custom tooltips and insights.</p>
+          <a href="pages/PowerBILinks.html" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+    <div class="view-all">
+      <a href="pages/projects.html" class="btn primary-btn">View All Projects</a>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Simple Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.hero, .skills, .featured-projects');
+      
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.classList.add('visible');
+        }, 200 * index);
+      });
+    });
+  </script>
 </body>
 </html>
