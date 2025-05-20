@@ -10,16 +10,6 @@
         "imageUrl": "PBI Portfolio/Assignment Hub/Screenshot 2025-03-17 121437.png"
     },
     {
-        "title": "Excel + Apple Shortcuts: A Productivity Hack",
-        "description": "A personal project combining Excel and Apple Shortcuts to automate data workflows and enhance productivity.",
-        "category": "Automation",
-        "tools": ["Excel", "PowerQuery", "Power Query", "Apple Shortcuts", "CSV"],
-        "link": "../projects/ExcelShortcut.html",
-        "featured": false,
-        "comingSoon": false,
-        "imageUrl": "PBI Portfolio/QEP Excel/Main_FirstResults.png"
-    },
-    {
         "title": "Power BI Dashboard Collection",
         "description": "A collection of interactive Power BI dashboards and reports created for various projects and work assignments.",
         "category": "Data Visualization",
@@ -28,25 +18,5 @@
         "featured": true,
         "comingSoon": false,
         "imageUrl": "PBI Portfolio/Delaware Cost Study/Page2Tooltip.png"
-    },
-    {
-        "title": "Delaware Cost Study Dashboard",
-        "description": "Interactive visualization of institutional cost data with custom tooltips and departmental performance metrics.",
-        "category": "Higher Education",
-        "tools": ["Power BI", "PowerBI", "Excel", "Financial Analysis", "Higher Education"],
-        "link": "../pages/PowerBILinks.html",
-        "featured": true,
-        "comingSoon": false,
-        "imageUrl": "PBI Portfolio/Delaware Cost Study/Page2Tooltip.png"
-    },
-    {
-        "title": "Alumni Survey Analysis",
-        "description": "Comprehensive analysis of alumni survey data showcasing career outcomes and educational satisfaction metrics.",
-        "category": "Higher Education",
-        "tools": ["Power BI", "PowerBI", "Survey Analysis", "Higher Education"],
-        "link": "../pages/PowerBILinks.html",
-        "featured": false,
-        "comingSoon": false,
-        "imageUrl": "PBI Portfolio/Alumni Survey/Screenshot 2025-03-17 122704.png"
     }
 ]
