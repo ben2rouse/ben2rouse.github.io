@@ -18,5 +18,15 @@
         "featured": true,
         "comingSoon": false,
         "imageUrl": "PBI Portfolio/Delaware Cost Study/Page2Tooltip.png"
+    },
+    {
+        "title": "Job List Scraper: Automated Job Data Collection",
+        "description": "A Python and Selenium-based tool for scraping job titles, tracking keyword trends, and automating job market analysis from Adventist Health's careers portal.",
+        "category": "Automation & Data Analysis",
+        "tools": ["Python", "Selenium", "Web Scraping", "Automation", "Data Analysis"],
+        "link": "../projects/JobListScraper.html",
+        "featured": false,
+        "comingSoon": false,
+        "imageUrl": "PBI Portfolio/GenEd Assessment/VEERA Job.png"
     }
 ]
