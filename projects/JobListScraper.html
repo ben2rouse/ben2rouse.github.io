@@ -14,18 +14,14 @@
   <!-- CSS Files -->
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link rel="stylesheet" href="../assets/css/page-styles.css" />
-  <style>
-    .project-images { display: flex; gap: 20px; margin-top: 20px; }
-    .project-image-card { border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease; }
-    .project-image-card:hover { transform: scale(1.03); }
-    .project-image-card img { width: 100%; height: auto; display: block; }
-  </style>
 </head>
 <body>
   <header>
+    <!-- TOP BAR -->
     <div class="top-bar">
       <a href="../index.html"><h1 class="site-title">Benjamin Rouse</h1></a>
     </div>
+    <!-- MAIN NAV BAR -->
     <nav class="main-nav">
       <ul>
         <li class="MainNavLink"><a href="../index.html">Home</a></li>
@@ -35,44 +31,55 @@
       </ul>
     </nav>
   </header>
+
+  <!-- PAGE HEADER -->
   <section class="page-header">
     <h2>Job List Scraper</h2>
     <p>Automating job data collection and keyword analysis with Python and Selenium</p>
   </section>
+
+  <!-- MAIN CONTENT -->
   <section class="content-section">
-    <h3>Project Overview</h3>
-    <p>The Job List Scraper is a Python-based automation tool that leverages Selenium to extract job titles from Adventist Health's careers portal. It counts keyword occurrences, tracks changes over time, and helps monitor job market trends for data-related roles. This project demonstrates web scraping, automation, and data analysis skills.</p>
-    <div class="tech-tags">
-      <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-      <span class="skill-tag"><i class="fas fa-robot"></i> Selenium</span>
-      <span class="skill-tag"><i class="fas fa-database"></i> Data Analysis</span>
-      <span class="skill-tag"><i class="fas fa-file-code"></i> Automation</span>
-    </div>
-    <div class="project-images">
-      <div class="project-image-card">
+    <div class="project-overview">
+      <div class="project-image-showcase">
         <img src="../assets/images/PBI Portfolio/GenEd Assessment/VEERA Job.png" alt="Job Scraper Example Output">
       </div>
-    </div>
-    <div class="project-actions" style="margin-top: 30px;">
-      <a href="https://github.com/ben2rouse/JobListScraper" target="_blank" class="btn primary-btn">View on GitHub</a>
-      <a href="../../Get a Job/Job_Detail_Scraper.py" target="_blank" class="btn secondary-btn">View Python Script</a>
-    </div>
-    <h3 style="margin-top:40px;">Key Features</h3>
-    <ul>
-      <li>Automated job title extraction from a live job portal</li>
-      <li>Keyword-based job count and change tracking</li>
-      <li>Easy-to-modify for other job boards or keywords</li>
-      <li>Demonstrates practical use of Selenium and Python scripting</li>
-    </ul>
-    <h3 style="margin-top:40px;">Sample Output</h3>
-    <pre style="background:#f8f8f8;padding:15px;border-radius:6px;overflow-x:auto;">
-Counts have changed:
-Previous counts: {}
-Current counts: {'Data': 3, 'Intelligence': 1, 'Visualization': 2, 'Analyst': 4}
+      <div class="project-details-content">
+        <h3>Project Overview</h3>
+        <p>The Job List Scraper is a Python-based automation tool that leverages Selenium to extract job titles from Adventist Health's careers portal. It counts keyword occurrences, tracks changes over time, and helps monitor job market trends for data-related roles. This project demonstrates web scraping, automation, and data analysis skills.</p>
+        <div class="project-actions">
+          <a href="https://github.com/ben2rouse/JobListScraper" target="_blank" class="btn primary-btn"><i class="fab fa-github"></i> View on GitHub</a>
+          <a href="../../Get a Job/Job_Detail_Scraper.py" target="_blank" class="btn secondary-btn"><i class="fas fa-file-code"></i> View Python Script</a>
+        </div>
+        <div class="technologies-used">
+          <h4>Technologies Used</h4>
+          <div class="tech-tags">
+            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag"><i class="fas fa-robot"></i> Selenium</span>
+            <span class="skill-tag"><i class="fas fa-database"></i> Data Analysis</span>
+            <span class="skill-tag"><i class="fas fa-file-code"></i> Automation</span>
+          </div>
+        </div>
+        <h3 style="margin-top:40px;">Key Features</h3>
+        <ul>
+          <li>Automated job title extraction from a live job portal</li>
+          <li>Keyword-based job count and change tracking</li>
+          <li>Easy-to-modify for other job boards or keywords</li>
+          <li>Demonstrates practical use of Selenium and Python scripting</li>
+        </ul>
+        <h3 style="margin-top:40px;">Sample Output</h3>
+        <pre style="background:#f8f8f8;padding:15px;border-radius:6px;overflow-x:auto;">
+            Counts have changed:
+            Previous counts: {}
+            Current counts: {'Data': 3, 'Intelligence': 1, 'Visualization': 2, 'Analyst': 4}
 
-https://ecvz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions?location=Roseville%2C+CA%2C+United+States&locationId=300000002565591&locationLevel=city&mode=job-location&radius=25&radiusUnit=MI
-    </pre>
+            https://ecvz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions?location=Roseville%2C+CA%2C+United+States&locationId=300000002565591&locationLevel=city&mode=job-location&radius=25&radiusUnit=MI
+        </pre>
+      </div>
+    </div>
   </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="social-links">
@@ -83,13 +90,16 @@ https://ecvz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requ
       <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Animation Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.project-image-card').forEach(card => {
-        card.addEventListener('click', function() {
-          const img = this.querySelector('img');
-          window.open(img.src, '_blank');
-        });
+      const elements = document.querySelectorAll('.page-header, .content-section');
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 200 * index);
       });
     });
   </script>
