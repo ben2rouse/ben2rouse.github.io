@@ -15,7 +15,7 @@
         "category": "Data Visualization",
         "tools": ["Power BI", "PowerBI", "Excel", "SQL", "Power Query", "PowerQuery", "DAX", "Data Analysis Expressions"],
         "link": "../projects/PowerBICollection.html",
-        "featured": true,
+        "featured": false,
         "comingSoon": false,
         "imageUrl": "PBI Portfolio/Delaware Cost Study/Page2Tooltip.png"
     },
