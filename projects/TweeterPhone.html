@@ -44,7 +44,14 @@
       <div class="project-details-content">
         <h3>Project Overview</h3>
         <p>
-          The Tweeter Phone is a voice-controlled microblogging tool that allows users to call a Twilio-powered phone number, enter a passcode, speak a message, and have that message automatically posted to X (formerly Twitter). This Python-based system leverages Twilio’s Programmable Voice API, speech-to-text transcription (e.g., OpenAI Whisper), and the X API via Tweepy. It is designed for experimental voice interaction, hands-free tweeting, or building interactive art or community engagement tools.
+          The Tweeter Phone is a voice-controlled microblogging tool that allows users to call a Twilio-powered phone number, enter a passcode, speak a message, 
+          and have that message automatically posted to X (formerly Twitter). 
+
+        I got inspiration for this project while brainstorming ways to use a voice call to authenticate an online login, using secret passphrases or codes—almost 
+        like something out of a spy movie, where agents use voice recognition and secret codes to access secure systems.
+
+          This Python-based system leverages Twilio’s Programmable Voice API, speech-to-text transcription (e.g., OpenAI Whisper), and the X API via Tweepy. 
+          It is designed for experimental voice interaction, hands-free tweeting, or building interactive art or community engagement tools.
         </p>
 
         <div class="project-actions">
@@ -123,7 +130,9 @@ def post_to_x(text):
         <div class="project-details-extras" style="margin-top:40px;">
           <h4>About TwiML Apps in Twilio</h4>
           <p>
-            <strong>TwiML Apps</strong> in Twilio allow you to define how Twilio should handle incoming calls or messages by specifying a webhook URL that returns TwiML (Twilio Markup Language) instructions. When a call is received, Twilio makes an HTTP request to your app's URL, and your server responds with TwiML to control the call flow—such as gathering input, playing audio, recording, or connecting calls. In the Tweeter Phone project, TwiML Apps are used to direct calls to your Flask app, which dynamically generates TwiML based on user input and project logic.
+            <strong>TwiML Apps</strong> in Twilio allow you to define how Twilio should handle incoming calls or messages by specifying a webhook URL that returns TwiML (Twilio Markup Language) 
+            instructions. When a call is received, Twilio makes an HTTP request to your app's URL, and your server responds with TwiML to control the call flow—such as gathering input, playing audio, 
+            recording, or connecting calls. In the Tweeter Phone project, TwiML Apps are used to direct calls to your Flask app, which dynamically generates TwiML based on user input and project logic.
           </p>
           <h4>Security Notes</h4>
           <ul style="margin-left:40px;">
@@ -142,10 +151,10 @@ def post_to_x(text):
 
           <h4 style="margin-top:24px;">Use Cases</h4>
           <ul style="margin-left:40px;">
-            <li>Hands-free microblogging</li>
             <li>Interactive art installations</li>
             <li>Elderly or accessibility-oriented posting tool</li>
             <li>Voice journaling with public or private logs</li>
+            <li>Could allow for message broadcasting when internet access is limited</li>
           </ul>
         </div>
       </div>
@@ -157,7 +166,7 @@ def post_to_x(text):
     <div class="footer-content">
       <div class="social-links">
         <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="www.linkedin.com/in/benjamin-rouse-7105a924a" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
       </div>
       <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
