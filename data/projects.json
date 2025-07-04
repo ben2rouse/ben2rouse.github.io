@@ -28,5 +28,15 @@
         "featured": false,
         "comingSoon": false,
         "imageUrl": "JobListScraping.png"
+    },
+    {
+         "title": "The Tweeter Phone: Twilio + Twitter Connection for posting on X",
+        "description": "A voice-powered Python app that uses Twilio to receive phone calls, transcribes speech, and posts spoken messages directly to X (Twitter) via the API. Perfect for hands-free microblogging or weirdly charming public announcements.",
+        "category": "Voice Automation",
+        "tools": ["Python", "Flask", "Twilio", "X API"],
+        "link": "../projects/TweeterPhone.html",
+        "featured": true,
+        "comingSoon": false,
+        "imageUrl": "TweeterPhoneBanner.png"
     }
 ]

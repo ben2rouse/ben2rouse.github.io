@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tweeter Phone | Benjamin Rouse - Data Analyst</title>
+  <meta name="description" content="Explore the Tweeter Phone project by Benjamin Rouse: a voice-controlled microblogging tool using Twilio, Whisper, and X (Twitter) API.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/page-styles.css" />
+</head>
+<body>
+  <header>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <a href="../index.html"><h1 class="site-title">Benjamin Rouse</h1></a>
+    </div>
+    <!-- MAIN NAV BAR -->
+    <nav class="main-nav">
+      <ul>
+        <li class="MainNavLink"><a href="../index.html">Home</a></li>
+        <li class="MainNavLink"><a href="../pages/about.html">About Me</a></li>
+        <li class="MainNavLink"><a href="../pages/projects.html" class="active">Projects</a></li>
+        <li class="MainNavLink"><a href="../pages/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h2>Tweeter Phone</h2>
+    <p>Voice-controlled microblogging with Twilio, Whisper, and X (Twitter) API</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="content-section">
+    <div class="project-overview">
+      <div class="project-details-content">
+        <h3>Project Overview</h3>
+        <p>
+          The Tweeter Phone is a voice-controlled microblogging tool that allows users to call a Twilio-powered phone number, enter a passcode, speak a message, and have that message automatically posted to X (formerly Twitter). This Python-based system leverages Twilio’s Programmable Voice API, speech-to-text transcription (e.g., OpenAI Whisper), and the X API via Tweepy. It is designed for experimental voice interaction, hands-free tweeting, or building interactive art or community engagement tools.
+        </p>
+
+        <div class="project-actions">
+          <!-- Update the href below if you add the code to GitHub -->
+          <a href="https://github.com/ben2rouse/TweeterPhone" target="_blank" class="btn primary-btn"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+
+        <h3 style="margin-top:40px;">Workflow</h3>
+        <ol>
+          <li><strong>Caller Interaction:</strong> User dials the Twilio number and is prompted for a 5-digit passcode.</li>
+          <li><strong>Passcode Verification:</strong> Passcode is checked; if correct, user is prompted to speak a message.</li>
+          <li><strong>Speech Capture:</strong> System records or transcribes the user's spoken message.</li>
+          <li><strong>Transcription:</strong> Audio is transcribed to text using OpenAI Whisper or similar.</li>
+          <li><strong>Tweeting:</strong> The transcribed message is posted to X (Twitter) via Tweepy.</li>
+          <li><strong>Feedback:</strong> Caller hears a confirmation message.</li>
+        </ol>
+
+        <h3 style="margin-top:40px;">Sample Code</h3>
+        <pre style="background:#f8f8f8;padding:15px;border-radius:6px;overflow-x:auto;">
+from flask import Flask, request, Response
+from twilio.twiml.voice_response import VoiceResponse, Gather
+import os
+
+app = Flask(__name__)
+SECRET_CODE = "12345"
+
+@app.route('/verify', methods=['POST'])
+def verify():
+    digits = request.form.get('Digits')
+    resp = VoiceResponse()
+    if digits == SECRET_CODE:
+        resp.say('Code accepted.')
+        resp.play('https://yourdomain.com/static/beep.mp3')
+        gather = Gather(input='speech', action='/tweet', method='POST', timeout=5)
+        resp.append(gather)
+    else:
+        resp.say('Invalid code. Goodbye!')
+    return Response(str(resp), mimetype='text/xml')
+
+@app.route('/tweet', methods=['POST'])
+def tweet():
+    speech = request.form.get('SpeechResult')
+    if speech:
+        post_to_x(speech)
+    resp = VoiceResponse()
+    resp.say("Thank you. Your message was posted.")
+    return Response(str(resp), mimetype='text/xml')
+
+import tweepy
+from dotenv import load_dotenv
+
+load_dotenv()
+
+def post_to_x(text):
+    client = tweepy.Client(
+        consumer_key=os.getenv("CONSUMER_KEY"),
+        consumer_secret=os.getenv("CONSUMER_SECRET"),
+        access_token=os.getenv("ACCESS_TOKEN"),
+        access_token_secret=os.getenv("ACCESS_TOKEN_SECRET")
+    )
+    client.create_tweet(text=text)
+        </pre>
+
+        <div class="technologies-used" style="margin-top:40px;">
+          <h4>Technologies Used</h4>
+          <div class="tech-tags">
+            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag"><i class="fas fa-phone"></i> Twilio Programmable Voice</span>
+            <span class="skill-tag"><i class="fas fa-microphone"></i> OpenAI Whisper</span>
+            <span class="skill-tag"><i class="fas fa-feather-alt"></i> Tweepy / X API</span>
+            <span class="skill-tag"><i class="fas fa-server"></i> Flask</span>
+            <span class="skill-tag"><i class="fas fa-cloud"></i> PythonAnywhere</span>
+          </div>
+        </div>
+
+        <div class="project-details-extras" style="margin-top:40px;">
+          <h4>Security Notes</h4>
+          <ul>
+            <li>Passcode verification prevents unauthorized use.</li>
+            <li>All credentials are stored securely using <code>.env</code> files.</li>
+            <li>API keys and secrets are never hardcoded or shared.</li>
+          </ul>
+
+          <h4 style="margin-top:24px;">Potential Extensions</h4>
+          <ul>
+            <li>Support for multiple user passcodes and sessions.</li>
+            <li>Integration with more advanced STT engines.</li>
+            <li>Logging and error handling via Twilio status callbacks.</li>
+            <li>Voice feedback with tweet summary or character count.</li>
+          </ul>
+
+          <h4 style="margin-top:24px;">Use Cases</h4>
+          <ul>
+            <li>Hands-free microblogging</li>
+            <li>Interactive art installations</li>
+            <li>Elderly or accessibility-oriented posting tool</li>
+            <li>Voice journaling with public or private logs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ben2rouse" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/benjamin-rouse" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@benjaminrouse.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Benjamin Rouse. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.page-header, .content-section');
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 200 * index);
+      });
+    });
+  </script>
