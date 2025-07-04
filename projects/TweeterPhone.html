@@ -126,14 +126,14 @@ def post_to_x(text):
             <strong>TwiML Apps</strong> in Twilio allow you to define how Twilio should handle incoming calls or messages by specifying a webhook URL that returns TwiML (Twilio Markup Language) instructions. When a call is received, Twilio makes an HTTP request to your app's URL, and your server responds with TwiML to control the call flow—such as gathering input, playing audio, recording, or connecting calls. In the Tweeter Phone project, TwiML Apps are used to direct calls to your Flask app, which dynamically generates TwiML based on user input and project logic.
           </p>
           <h4>Security Notes</h4>
-          <ul>
+          <ul style="margin-left:40px;">
             <li>Passcode verification prevents unauthorized use.</li>
             <li>All credentials are stored securely using <code>.env</code> files.</li>
             <li>API keys and secrets are never hardcoded or shared.</li>
           </ul>
 
           <h4 style="margin-top:24px;">Potential Extensions</h4>
-          <ul>
+          <ul style="margin-left:40px;">
             <li>Support for multiple user passcodes and sessions.</li>
             <li>Integration with more advanced STT engines.</li>
             <li>Logging and error handling via Twilio status callbacks.</li>
@@ -141,7 +141,7 @@ def post_to_x(text):
           </ul>
 
           <h4 style="margin-top:24px;">Use Cases</h4>
-          <ul>
+          <ul style="margin-left:40px;">
             <li>Hands-free microblogging</li>
             <li>Interactive art installations</li>
             <li>Elderly or accessibility-oriented posting tool</li>
