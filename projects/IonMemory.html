@@ -9,15 +9,16 @@
   <link rel="stylesheet" href="../assets/css/page-styles.css" />
   <style>
     body { background: #fff; color: #222; }
-    .section { margin: 40px auto; max-width: 900px; padding: 24px; background: #f8f8f8; border-radius: 10px; box-shadow: 0 2px 12px #bbb3; }
-    h1, h2, h3 { color: #ffb300; }
+    .section { margin: 40px auto; max-width: 900px; padding: 24px; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px #e0e0e0; }
+    h1, h2, h3 { color: #b8860b; }
     .feature-list, .project-structure { margin-left: 24px; }
     .docker-block { background: #f3f3f3; color: #222; border-radius: 6px; padding: 12px; margin: 12px 0; font-family: monospace; border: 1px solid #eee; }
     .periodic-preview { width: 100%; max-width: 600px; margin: 24px auto; display: block; border-radius: 8px; box-shadow: 0 2px 8px #bbb5; background: #fff; }
     .img-row { display: flex; gap: 24px; justify-content: center; align-items: flex-start; flex-wrap: wrap; }
     .img-col { flex: 1 1 260px; min-width: 220px; max-width: 340px; }
-    .img-caption { color: #b28704; font-size: 1em; margin-top: 8px; margin-bottom: 24px; }
-    .btn-demo { display: inline-block; margin: 16px 0; padding: 10px 22px; background: #ffb300; color: #222; border-radius: 6px; font-weight: bold; text-decoration: none; }
+    .img-caption { color: #b8860b; font-size: 1em; margin-top: 8px; margin-bottom: 24px; }
+    .btn-demo, .btn-github { display: inline-block; margin: 16px 0; padding: 10px 22px; background: #b8860b; color: #fff; border-radius: 6px; font-weight: bold; text-decoration: none; transition: background 0.2s; }
+    .btn-demo:hover, .btn-github:hover { background: #ffb300; color: #222; }
   </style>
 </head>
 <body>
@@ -51,7 +52,7 @@
       </div>
     </div>
     <p>This web app helps students study and memorize ions for General Chemistry I. It features an interactive periodic table, toggleable ion names and symbols, and practice tools for both monatomic and polyatomic ions. Pop-up instructions guide first-time users.</p>
-    <a href="/projects/IonMemory.html" class="btn-demo">Try the Demo</a>
+    <a href="https://github.com/ben2rouse/WebIonTable" class="btn-github" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
   </section>
   <section class="section">
     <h3>How does it work?</h3>
@@ -88,20 +89,6 @@
       <li>Filter polyatomic ions by charge (All, 1-, 2-, 3-)</li>
       <li>Instant feedback by toggling to check your answer</li>
     </ul>
-  </section>
-  <section class="section">
-    <h3>Getting Started (with Docker)</h3>
-    <ol>
-      <li>Install <a href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker Desktop</a></li>
-      <li>Clone this repository:<br>
-        <div class="docker-block">git clone &lt;your-repo-url&gt;<br>cd Ions</div>
-      </li>
-      <li>Build and run the container:<br>
-        <div class="docker-block">docker-compose up --build</div>
-      </li>
-      <li>Open your browser and go to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a></li>
-    </ol>
-    <p><strong>Troubleshooting:</strong> If you see a "Mounts Denied" error on Mac, add the project folder to Docker Desktop's File Sharing settings.</p>
   </section>
   <section class="section">
     <h3>Project Structure</h3>
