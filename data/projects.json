@@ -38,5 +38,15 @@
         "featured": true,
         "comingSoon": false,
         "imageUrl": "TweeterPhoneBanner.png"
+    },
+    {
+        "title": "Ions Study Web App",
+        "description": "An interactive web app for memorizing ions in University (Gen Chem I). Features a clickable periodic table, toggleable names/symbols, and practice tools.",
+        "category": "Educational Tool",
+        "tools": ["PHP", "HTML", "JavaScript", "CSS", "Docker"],
+        "link": "../projects/IonMemory.html",
+        "featured": false,
+        "comingSoon": false,
+        "imageUrl": "ion-periodic-preview.png"
     }
 ]
