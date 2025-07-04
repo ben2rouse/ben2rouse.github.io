@@ -53,11 +53,11 @@
         </div>
 
         <h3 style="margin-top:40px;">Workflow</h3>
-        <ol>
-          <li><strong>Caller Interaction:</strong> User dials the Twilio number and is prompted for a 5-digit passcode.</li>
+        <ol style="margin-left:40px;">
+          <li><strong>Caller Interaction:</strong> User dials the Twilio number and is prompted for a 6-digit passcode.</li>
           <li><strong>Passcode Verification:</strong> Passcode is checked; if correct, user is prompted to speak a message.</li>
           <li><strong>Speech Capture:</strong> System records or transcribes the user's spoken message.</li>
-          <li><strong>Transcription:</strong> Audio is transcribed to text using OpenAI Whisper or similar.</li>
+          <li><strong>Transcription:</strong> Audio is transcribed to text using OpenAI Whisper or Twilio's built in transciber.</li>
           <li><strong>Tweeting:</strong> The transcribed message is posted to X (Twitter) via Tweepy.</li>
           <li><strong>Feedback:</strong> Caller hears a confirmation message.</li>
         </ol>
@@ -121,6 +121,10 @@ def post_to_x(text):
         </div>
 
         <div class="project-details-extras" style="margin-top:40px;">
+          <h4>About TwiML Apps in Twilio</h4>
+          <p>
+            <strong>TwiML Apps</strong> in Twilio allow you to define how Twilio should handle incoming calls or messages by specifying a webhook URL that returns TwiML (Twilio Markup Language) instructions. When a call is received, Twilio makes an HTTP request to your app's URL, and your server responds with TwiML to control the call flow—such as gathering input, playing audio, recording, or connecting calls. In the Tweeter Phone project, TwiML Apps are used to direct calls to your Flask app, which dynamically generates TwiML based on user input and project logic.
+          </p>
           <h4>Security Notes</h4>
           <ul>
             <li>Passcode verification prevents unauthorized use.</li>
@@ -172,3 +176,5 @@ def post_to_x(text):
       });
     });
   </script>
+</body>
+</html>
