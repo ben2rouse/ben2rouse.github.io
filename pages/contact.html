@@ -74,6 +74,64 @@
     </div>
   </section>
 
+  <section class="content-section">
+    <h3 style="margin-top:40px;">Send a Message</h3>
+    <form id="contactForm" style="max-width:500px;margin:auto;">
+      <div class="form-group">
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject*</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Company (optional)</label>
+        <input type="text" id="company" name="company">
+      </div>
+      <div class="form-group">
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn primary-btn">Send Message</button>
+      <div id="formStatus" style="margin-top:10px;"></div>
+    </form>
+    <style>
+      .form-group { margin-bottom: 18px; }
+      label { display:block; margin-bottom: 6px; font-weight:600; }
+      input, textarea { width:100%; padding:8px; border-radius:4px; border:1px solid #ccc; font-size:1em; }
+      textarea { resize:vertical; }
+    </style>
+    <script>
+      document.getElementById('contactForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = Object.fromEntries(new FormData(form));
+        const status = document.getElementById('formStatus');
+        status.textContent = 'Sending...';
+        try {
+          const res = await fetch('https://yourusername.pythonanywhere.com/contact', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+          });
+          if (res.ok) {
+            status.textContent = 'Thank you! Your message has been sent.';
+            form.reset();
+          } else {
+            status.textContent = 'There was an error sending your message.';
+          }
+        } catch (err) {
+          status.textContent = 'There was an error sending your message.';
+        }
+      };
+    </script>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-content">

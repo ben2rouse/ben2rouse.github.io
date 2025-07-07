@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Admin | Benjamin Rouse</title>
+  <meta name="description" content="Admin dashboard for viewing and managing contact form submissions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/page-styles.css" />
+  <style>
+    body { background: #fff; color: #222; }
+    .admin-container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px #e0e0e0; padding: 32px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f3f3f3; }
+    .btn-action { padding: 4px 12px; border-radius: 4px; border: none; cursor: pointer; margin-right: 6px; }
+    .btn-delete { background: #e57373; color: #fff; }
+    .btn-responded { background: #81c784; color: #fff; }
+    .login-form { max-width: 350px; margin: 40px auto; background: #f8f8f8; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px #bbb5; }
+    .login-form input { width: 100%; margin-bottom: 16px; padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <a href="../index.html"><h1 class="site-title">Benjamin Rouse</h1></a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li class="MainNavLink"><a href="../index.html">Home</a></li>
+        <li class="MainNavLink"><a href="../pages/about.html">About Me</a></li>
+        <li class="MainNavLink"><a href="../pages/projects.html">Projects</a></li>
+        <li class="MainNavLink"><a href="../pages/contact.html">Contact</a></li>
+        <li class="MainNavLink"><a href="../pages/contact-admin.html" class="active">Contact Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="page-header">
+    <h2>Contact Form Admin</h2>
+    <p>Login to view, mark, or delete contact form submissions.</p>
+  </section>
+  <div class="admin-container" id="adminApp" style="display:none;">
+    <div class="admin-header">
+      <h3>Contact Form Submissions</h3>
+      <button onclick="logout()">Logout</button>
+    </div>
+    <table class="admin-table" id="submissionsTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Company</th>
+          <th>Subject</th>
+          <th>Message</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <form class="login-form" id="loginForm">
+    <h3>Admin Login</h3>
+    <input type="password" id="adminPassword" placeholder="Enter admin password" required />
+    <button type="submit" class="btn primary-btn">Login</button>
+    <div id="loginStatus" style="margin-top:10px;"></div>
+  </form>
+  <script>
+    const API_BASE = 'https://yourusername.pythonanywhere.com'; // Change to your deployed API
+    let adminToken = localStorage.getItem('adminToken') || '';
+
+    function showAdmin() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('adminApp').style.display = '';
+    }
+    function showLogin() {
+      document.getElementById('loginForm').style.display = '';
+      document.getElementById('adminApp').style.display = 'none';
+    }
+    function logout() {
+      localStorage.removeItem('adminToken');
+      adminToken = '';
+      showLogin();
+    }
+    async function fetchSubmissions() {
+      const res = await fetch(API_BASE + '/admin/submissions', {
+        headers: { 'Authorization': 'Bearer ' + adminToken }
+      });
+      if (!res.ok) {
+        logout();
+        return;
+      }
+      const data = await res.json();
+      const tbody = document.querySelector('#submissionsTable tbody');
+      tbody.innerHTML = '';
+      data.forEach(sub => {
+        const tr = document.createElement('tr');
+        tr.className = sub.responded ? 'responded' : 'unread';
+        tr.innerHTML = `
+          <td>${sub.id}</td>
+          <td>${sub.name}</td>
+          <td>${sub.email}</td>
+          <td>${sub.company || ''}</td>
+          <td>${sub.subject}</td>
+          <td>${sub.message}</td>
+          <td>${sub.date}</td>
+          <td>${sub.responded ? 'Responded' : 'New'}</td>
+          <td class="admin-actions">
+            <button onclick="markResponded(${sub.id})" ${sub.responded ? 'disabled' : ''}>Mark Responded</button>
+            <button onclick="deleteSubmission(${sub.id})">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+    async function markResponded(id) {
+      await fetch(API_BASE + '/admin/mark_responded/' + id, {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + adminToken }
+      });
+      fetchSubmissions();
+    }
+    async function deleteSubmission(id) {
+      if (!confirm('Delete this submission?')) return;
+      await fetch(API_BASE + '/admin/delete/' + id, {
+        method: 'DELETE',
+        headers: { 'Authorization': 'Bearer ' + adminToken }
+      });
+      fetchSubmissions();
+    }
+    document.getElementById('loginForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const pw = document.getElementById('adminPassword').value;
+      const status = document.getElementById('loginStatus');
+      status.textContent = 'Logging in...';
+      const res = await fetch(API_BASE + '/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pw })
+      });
+      if (res.ok) {
+        const { token } = await res.json();
+        adminToken = token;
+        localStorage.setItem('adminToken', token);
+        showAdmin();
+        fetchSubmissions();
+      } else {
+        status.textContent = 'Login failed.';
+      }
+    };
+    // Auto-login if token exists
+    if (adminToken) {
+      showAdmin();
+      fetchSubmissions();
+    }
+  </script>
+</body>
+</html>
