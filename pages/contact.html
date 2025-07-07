@@ -97,7 +97,7 @@
         <label for="message">Message*</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
-      <button type="submit" class="btn primary-btn">Send Message</button>
+      <button type="submit" class="btn primary-btn contact-submit-btn">Send Message</button>
       <div id="formStatus" style="margin-top:10px;"></div>
     </form>
     <style>
@@ -105,6 +105,25 @@
       label { display:block; margin-bottom: 6px; font-weight:600; }
       input, textarea { width:100%; padding:8px; border-radius:4px; border:1px solid #ccc; font-size:1em; }
       textarea { resize:vertical; }
+      .contact-submit-btn {
+        background: linear-gradient(90deg, #2e3a59 0%, #4e7bb4 100%);
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 4px;
+        padding: 12px 32px;
+        font-size: 1.1em;
+        box-shadow: 0 2px 8px #0001;
+        transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        cursor: pointer;
+        margin-top: 8px;
+        letter-spacing: 0.5px;
+      }
+      .contact-submit-btn:hover, .contact-submit-btn:focus {
+        background: linear-gradient(90deg, #4e7bb4 0%, #2e3a59 100%);
+        box-shadow: 0 4px 16px #0002;
+        transform: translateY(-2px) scale(1.03);
+      }
     </style>
     <script>
       document.getElementById('contactForm').onsubmit = async function(e) {
