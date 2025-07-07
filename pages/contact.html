@@ -133,7 +133,7 @@
         const status = document.getElementById('formStatus');
         status.textContent = 'Sending...';
         try {
-          const res = await fetch('https://ben2rouse.pythonanywhere.com/mysite/Portfolio/contact', {
+          const res = await fetch('https://ben2rouse.pythonanywhere.com/contact', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)
