@@ -51,12 +51,12 @@
     },
     {
         "title": "Email/Article Summary Digest Automation",
-        "description": "Automates retrieval, summarization, and daily emailing of tech digests and curated articles using Python, OpenAI, Gmail, and Raindrop.io. Generates beautiful HTML emails with categorized summaries, article links, and API usage stats.",
+        "description": "Automates retrieval, summarization, and daily emailing of tech digests and curated articles using Python, OpenAI, Gmail, and Raindrop.io. Generates an HTML email with categorized summaries, article links, and API usage stats.",
         "category": "Automation & AI",
         "tools": ["Python", "OpenAI API", "Gmail API", "Raindrop.io API", "HTML Email", "Automation", "Cron", "Flask"],
         "link": "../projects/EmailArticleSummary.html",
         "featured": true,
         "comingSoon": false,
-        "imageUrl": "Email-Article Summary/EmailSummary.png"
+        "imageUrl": "Email-Article Summary/Diagram.png"
     }
 ]
