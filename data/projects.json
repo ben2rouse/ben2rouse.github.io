@@ -30,7 +30,7 @@
         "imageUrl": "JobListScraping.png"
     },
     {
-         "title": "The Tweeter Phone: Twilio + Twitter Connection for posting on X",
+        "title": "The Tweeter Phone: Twilio + Twitter Connection for posting on X",
         "description": "A voice-powered Python app that uses Twilio to receive phone calls, transcribes speech, and posts spoken messages directly to X (Twitter) via the API. Perfect for hands-free microblogging or weirdly charming public announcements.",
         "category": "Voice Automation",
         "tools": ["Python", "Flask", "Twilio", "X API"],
@@ -48,5 +48,15 @@
         "featured": false,
         "comingSoon": false,
         "imageUrl": "Ion Table Page/OverallTable.png"
+    },
+    {
+        "title": "Email/Article Summary Digest Automation",
+        "description": "Automates retrieval, summarization, and daily emailing of tech digests and curated articles using Python, OpenAI, Gmail, and Raindrop.io. Generates beautiful HTML emails with categorized summaries, article links, and API usage stats.",
+        "category": "Automation & AI",
+        "tools": ["Python", "OpenAI API", "Gmail API", "Raindrop.io API", "HTML Email", "Automation", "Cron", "Flask"],
+        "link": "../projects/EmailArticleSummary.html",
+        "featured": true,
+        "comingSoon": false,
+        "imageUrl": "Email-Article Summary/EmailSummary.png"
     }
 ]
